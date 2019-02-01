@@ -5,9 +5,10 @@ MAINTAINER "cnbeining" <i@cnbeining.com>
 COPY yum.conf /etc/yum.conf
 
 RUN yum clean all && \
-    yum -y install vim gcc lapack-devel blas-devel libyaml-devel && \
-    pip install -U pip && \
-    pip install -U zappa 
+    yum -y install gcc libyaml-devel
+
+RUN pip3 install -U pip && \
+    pip3 install -U zappa 
 
 WORKDIR /var/task
 
