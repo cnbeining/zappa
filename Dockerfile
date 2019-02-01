@@ -5,7 +5,8 @@ MAINTAINER "cnbeining" <i@cnbeining.com>
 COPY yum.conf /etc/yum.conf
 
 RUN yum clean all && \
-    yum -y install gcc
+    yum -y install gcc && \
+    yum clean all
 
 RUN pip3 install -U pip && \
     pip3 install -U zappa 
