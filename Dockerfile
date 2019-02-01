@@ -5,10 +5,9 @@ MAINTAINER "cnbeining" <i@cnbeining.com>
 COPY yum.conf /etc/yum.conf
 
 RUN yum clean all && \
-    yum -y install vim postgresql postgresql-devel mysql mysql-devel gcc lapack-devel blas-devel libyaml-devel && \
-    yum --enablerepo=epel -y install hdf5-devel && \
+    yum -y install vim gcc lapack-devel blas-devel libyaml-devel && \
     pip install -U pip && \
-    pip install -U zappa mysql-python
+    pip install -U zappa 
 
 WORKDIR /var/task
 
